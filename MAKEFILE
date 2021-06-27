@@ -1,0 +1,14 @@
+CFLAGS = /nologo /AS /Oase /Gsy /W4 /c
+LFLAGS = /NOLOGO
+
+OBJS = gamaoil.obj llint.obj
+
+gamaoil.exe	:	$(OBJS)
+	link $(LFLAGS) $(OBJS);
+
+gamaoil.obj	:	gamaoil.cpp llint.h
+	cl $(CFLAGS) gamaoil.cpp
+
+llint.obj	:	llint.cpp llint.h
+	cl $(CFLAGS) llint.cpp
+
